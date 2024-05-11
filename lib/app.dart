@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:simple_social_app/src/pages/friends_list_page.dart';
 
 class App extends StatefulWidget {
