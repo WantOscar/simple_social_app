@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:simple_social_app/src/pages/friends_list_page.dart';
 
 class App extends StatefulWidget {
@@ -14,6 +15,11 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: IndexedStack(
         index: pageIndex,
         children: [
@@ -24,16 +30,22 @@ class _AppState extends State<App> {
           Container(color: const Color.fromARGB(255, 84, 81, 81)),
         ],
       ),
+
+      /// 커스텀 바텀 앱 바
       bottomNavigationBar: const BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Icon(Icons.home_filled, color: Color.fromARGB(255, 113, 178, 231)),
-            Icon(Icons.favorite, color: Colors.grey),
-            Icon(Icons.add, color: Colors.grey),
-            Icon(Icons.account_circle, color: Colors.grey),
-            Icon(Icons.settings, color: Colors.grey),
-          ],
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 20.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(Icons.home_filled,
+                  color: Color.fromARGB(255, 113, 178, 231)),
+              Icon(Icons.favorite, color: Colors.grey),
+              Opacity(opacity: 0.0, child: Icon(Icons.add, color: Colors.grey)),
+              Icon(Icons.account_circle, color: Colors.grey),
+              Icon(Icons.settings, color: Colors.grey),
+            ],
+          ),
         ),
       ),
     );
