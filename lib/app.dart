@@ -24,23 +24,17 @@ class _AppState extends State<App> {
           Container(color: const Color.fromARGB(255, 84, 81, 81)),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: pageIndex,
-        onTap: (value) {
-          setState(() {
-            pageIndex = value;
-          });
-        },
-        selectedItemColor: Colors.blue[400],
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.add), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: ""),
-        ],
+      bottomNavigationBar: const BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Icon(Icons.home_filled, color: Color.fromARGB(255, 113, 178, 231)),
+            Icon(Icons.favorite, color: Colors.grey),
+            Icon(Icons.add, color: Colors.grey),
+            Icon(Icons.account_circle, color: Colors.grey),
+            Icon(Icons.settings, color: Colors.grey),
+          ],
+        ),
       ),
     );
   }
